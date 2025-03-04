@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <app-header></app-header>
+</mat-toolbar>
+
+<mat-sidenav-container fxFill>
+  <mat-sidenav #sidenav mode="side" opened="true">
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav-content fxLayout="column" fxFlex>
+    <div fxFlex="1 1 auto" style="padding: 1rem">
+      <router-outlet></router-outlet>
+    </div>
+
+    <footer fxLayout="row" fxLayoutAlign="center center" style="padding: 1rem">
+      <app-footer></app-footer>
+    </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
